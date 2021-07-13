@@ -1,0 +1,59 @@
+﻿@model HospitalEquipment.Models.Entity.Urun
+@{
+    ViewBag.Title = "SilBilgiGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="container">Delete</h2>
+
+
+<div class="container" style="margin-top:20px;">
+    <form action="/Klinik/Sil/">
+        @using (Html.BeginForm("Sil", "Urun"))
+        {
+
+            <div class="form-group">
+                @Html.HiddenFor(x => x.ID)
+                <b> <label>Clinic ID :</label></b>
+                @Html.DisplayFor(x => x.KlinikID, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <b> <label>Clinic Name :</label></b>
+                @Html.DisplayFor(x => x.KlinikAdi, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <b> <label>Equipment Name :</label></b>
+                @Html.DisplayFor(x => x.EkipmanAdi, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <b> <label>Delivery Date :</label></b>
+                @Html.DisplayFor(x => x.TeminEdilmeTarihi, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <b> <label>Piece :</label></b>
+                @Html.DisplayFor(x => x.Adet, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <b> <label>Unit Price &#x24 :</label></b>
+                @Html.DisplayFor(x => x.BirimFiyat, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <b> <label>Usage Rate :</label></b>
+                @Html.DisplayFor(x => x.KullanımOrani, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <b> <label>Statement :</label></b>
+                @Html.DisplayFor(x => x.Aciklama, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <a href="/Klinik/Index/" class="btn btn-secondary">Exit</a>
+                <button class="btn btn-danger">Delete</button>
+
+            </div>
+
+        }
+        </form>
+
+</div>

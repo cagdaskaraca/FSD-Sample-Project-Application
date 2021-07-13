@@ -1,31 +1,89 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@using HospitalEquipment.Models.Entity
+@model List<HospitalEquipment.Models.Entity.Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container" style="margin-left:15px;">
+    @using (Html.BeginForm())
+    {
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+        <div class="form-group">
+            <div style="width:25%;float:left">
+                @Html.TextBox("ara", null, new {@class="form-control",@placeHolder="Search CLinik or Equipment"})
+            </div>
+            <div>
+                @Html.ActionLink("Ara", "Index", null, new { @class = "btn btn-info", onclick = "$(this).parents('form').attr('action', $(this).attr('href'));$(this).parents('form').submit();return false;" })
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            </div>
+        </div>
+    }
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+
+<table class="table table-dark" style="margin-top:20px;">
+
+        
+        <thead>
+                       
+            <tr>
+
+                <td align="center">
+                    Clinic ID
+                </td>
+                <td align="center">
+                    Clinic Name
+                </td>
+                <td align="center">
+                    Equipment Name
+                </td>
+                <td align="center">
+                    Delivery Date
+                </td>
+                <td align="center">
+                    Piece
+                </td>
+                <td align="center">
+                    Unit Price
+                </td>
+                <td align="center">
+                    Usage Rate
+                </td>
+                <td align="center">
+                    Statement
+                </td>
+                <td colspan="2" align="center">
+
+                    <a href="/Klinik/Ekle/" class="btn btn-success" button style="width:190px; height:40px;">ADD</a>
+                </td>
+
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+
+                    @*  <td>@item.ID</td>*@
+                    <td align="center">@item.KlinikID</td>
+                    <td align="center">@item.KlinikAdi</td>
+                    <td align="center">@item.EkipmanAdi</td>
+                    <td align="center">@item.TeminEdilmeTarihi</td>
+                    <td align="center">@item.Adet</td>
+                    <td align="center">@item.BirimFiyat</td>
+                    <td align="center">@item.KullanımOrani</td>
+                    <td width="30%">@item.Aciklama</td>
+                    <td><a href="/Klinik/SilBilgiGetir/@item.ID" class="btn btn-danger">DELETE</a>
+                    <td><a href="/Klinik/GuncelleBilgiGetir/@item.ID" class="btn btn-primary">UPDATE</a> </td>
+
+                </tr>
+                }
+
+
+
+        </tbody>
+    </table>
+

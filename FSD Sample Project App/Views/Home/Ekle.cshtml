@@ -1,0 +1,58 @@
+﻿@model HospitalEquipment.Models.Entity.Urun
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <form action="/Klinik/Ekle2/">
+
+        <h2>ADD ITEMS</h2>
+        <div class="form-group" style="margin-top:30px;">
+            <label>Clinic ID</label>
+
+            <input type="text" name="KlinikID" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Clinic Name</label>
+            <input type="text" name="KlinikAdi" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Equipment Name</label>
+            <input type="text" name="EkipmanAdi" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Delivery Date &#128197</label>
+            <input type="date" name="TeminEdilmeTarihi" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Piece</label>
+            <input type="text" name="Adet" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Unit Price &#x24</label>
+            <input type="text" name="BirimFiyat" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Usage Rate</label>
+            <input type="text" name="KullanımOrani" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Statement</label>
+            <textarea name="Aciklama" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <a href="/Klinik/Index/" class="btn btn-secondary">Exit</a>
+            <button class="btn btn-success">Add</button>
+
+        </div>
+
+
+    </form>
+
+</div>
+
