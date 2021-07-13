@@ -27,3 +27,6 @@ You can do. In addition to the content mentioned above, you can add any features
 After receiving the project document, you should provide information about the date you can complete and the relevant
 You are expected to submit the solution file on the date. The duration is 2 according to the intensity of the candidate.
 It can be determined as desired, not exceeding a week.
+
+
+Model class is created with Ado.net Entity Data Model. The db script must be run while running on local. You can use the current configuration with a connection by adding a new model.
