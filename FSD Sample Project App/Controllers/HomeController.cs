@@ -10,13 +10,13 @@ namespace FSD_Sample_Project_App.Controllers
     public class HomeController : Controller
     {
 
-        FSDSampleProjectdbEntities db = new FSDSampleProjectdbEntities();
+        FSDSampleProjectdbEntities1 db = new FSDSampleProjectdbEntities1();
         public ActionResult Index(string ara)
         {
-            var model = db.Urun.ToList();
+            var model = db.FSDSampleProjectdb.ToList();
             if (!string.IsNullOrEmpty(ara))
             {
-                model = model.Where(x => x.KlinikAdi.Contains(ara) || x.EkipmanAdi.Contains(ara)).ToList();
+                model = model.Where(x => x.KisaAd.Contains(ara) || x.Ad.Contains(ara)).ToList();
             }
             return View(model);
         }
@@ -24,21 +24,21 @@ namespace FSD_Sample_Project_App.Controllers
         {
             return View();
         }
-        public ActionResult Ekle2(Urun k)
+        public ActionResult Ekle2(FSDSampleProjectdb k)
         {
-            db.Urun.Add(k);
+            db.FSDSampleProjectdb.Add(k);
             db.SaveChanges();
             return RedirectToAction("Index");
 
         }
-        public ActionResult GuncelleBilgiGetir(Urun k)
+        public ActionResult GuncelleBilgiGetir(FSDSampleProjectdb k)
         {
-            var model = db.Urun.Find(k.ID);
+            var model = db.FSDSampleProjectdb.Find(k.Id);
             if (model == null) return HttpNotFound();
             return View(model);
 
         }
-        public ActionResult Guncelle(Urun k)
+        public ActionResult Guncelle(FSDSampleProjectdb k)
         {
             db.Entry(k).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
@@ -46,14 +46,14 @@ namespace FSD_Sample_Project_App.Controllers
 
 
         }
-        public ActionResult SilBilgiGetir(Urun k)
+        public ActionResult SilBilgiGetir(FSDSampleProjectdb k)
         {
-            var model = db.Urun.Find(k.ID);
+            var model = db.FSDSampleProjectdb.Find(k.Id);
             if (model == null) return HttpNotFound();
             return View(model);
 
         }
-        public ActionResult Sil(Urun k)
+        public ActionResult Sil(FSDSampleProjectdb k)
         {
             db.Entry(k).State = System.Data.Entity.EntityState.Deleted;
             db.SaveChanges();

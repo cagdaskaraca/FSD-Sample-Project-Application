@@ -4,69 +4,85 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="HospitalEquipmentdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
-        <EntityType Name="Urun">
+      <Schema Namespace="FSDSampleProjectdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FSDSampleProjectdb">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="KlinikID" Nullable="false" Type="int" />
-          <Property Name="KlinikAdi" Nullable="false" MaxLength="100" Type="varchar" />
-          <Property Name="EkipmanAdi" Nullable="false" MaxLength="250" Type="varchar" />
-          <Property Name="TeminEdilmeTarihi" Nullable="false" Type="date" />
-          <Property Name="Adet" Nullable="false" Type="int" />
-          <Property Name="BirimFiyat" Nullable="false" Precision="28" Scale="2" Type="decimal" />
-          <Property Name="KullanımOrani" Nullable="false" Precision="4" Scale="1" Type="decimal" />
-          <Property Name="Aciklama" Nullable="false" MaxLength="500" Type="varchar" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UrunAciklama" Type="nvarchar" MaxLength="50" />
+          <Property Name="TextKod" Type="nvarchar" MaxLength="10" />
+          <Property Name="Sira" Type="int" />
+          <Property Name="Agirlik" Type="int" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="15" />
+          <Property Name="KisaAd" Type="nvarchar" MaxLength="10" />
+          <Property Name="GrupKod" Type="int" />
+          <Property Name="EkGrupKod" Type="int" />
+          <Property Name="UreticiKod" Type="nvarchar" MaxLength="5" />
+          <Property Name="Birim" Type="nvarchar" MaxLength="10" />
+          <Property Name="KdvOran" Type="int" />
+          <Property Name="UrunTip" Type="int" />
+          <Property Name="Durum" Type="int" />
+          <Property Name="UretimTarihi" Type="datetime" />
+          <Property Name="SeriTakip" Type="int" />
         </EntityType>
-        <EntityContainer Name="HospitalEquipmentdbModelStoreContainer">
-          <EntitySet Name="Urun" EntityType="Self.Urun" Schema="dbo" store:Type="Tables" />
+        <EntityContainer Name="FSDSampleProjectdbModelStoreContainer">
+          <EntitySet Name="FSDSampleProjectdb" EntityType="Self.FSDSampleProjectdb" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="HospitalEquipmentdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Urun">
+      <Schema Namespace="FSDSampleProjectdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="FSDSampleProjectdb">
           <Key>
-            <PropertyRef Name="UrunAciklama" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="UrunAciklama" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TextKod" Type="Int32" Nullable="false" />
-          <Property Name="Sira" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Ad" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="KisaAd" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="GrupKod" Type="Int32" Nullable="false" />
-          <Property Name="EkGrupKod" Type="Decimal" Precision="28" Scale="2" Nullable="false" />
-          <Property Name="UreticiKod" Type="Decimal" Precision="4" Scale="1" Nullable="false" />
-          <Property Name="Birim" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="KdvOran" Type="String" Nullable="false" />
-          <Property Name="UrunTip" Type="String" Nullable="false" />
-          <Property Name="Durum" Type="String" Nullable="false" />
-          <Property Name="UretimTarihi" Type="String" Nullable="false" />
-          <Property Name="SeriTakip" Type="String" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UrunAciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TextKod" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Sira" Type="Int32" />
+          <Property Name="Agirlik" Type="Int32" />
+          <Property Name="Ad" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="KisaAd" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="GrupKod" Type="Int32" />
+          <Property Name="EkGrupKod" Type="Int32" />
+          <Property Name="UreticiKod" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Birim" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KdvOran" Type="Int32" />
+          <Property Name="UrunTip" Type="Int32" />
+          <Property Name="Durum" Type="Int32" />
+          <Property Name="UretimTarihi" Type="DateTime" Precision="3" />
+          <Property Name="SeriTakip" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="FSDSampleProjectdbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Urun" EntityType="HospitalEquipmentdbModel.Urun" />
+        <EntityContainer Name="FSDSampleProjectdbEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FSDSampleProjectdb" EntityType="Self.FSDSampleProjectdb" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HospitalEquipmentdbModelStoreContainer" CdmEntityContainer="FSDSampleProjectdbEntities">
-          <EntitySetMapping Name="Urun">
-            <EntityTypeMapping TypeName="HospitalEquipmentdbModel.Urun">
-              <MappingFragment StoreEntitySet="Urun">
-                <ScalarProperty Name="UrunAciklama" ColumnName="ID" />
-                <ScalarProperty Name="TextKod" ColumnName="KlinikID" />
-                <ScalarProperty Name="Sira" ColumnName="KlinikAdi" />
-                <ScalarProperty Name="Ad" ColumnName="EkipmanAdi" />
-                <ScalarProperty Name="KisaAd" ColumnName="TeminEdilmeTarihi" />
-                <ScalarProperty Name="GrupKod" ColumnName="Adet" />
-                <ScalarProperty Name="EkGrupKod" ColumnName="BirimFiyat" />
-                <ScalarProperty Name="UreticiKod" ColumnName="KullanımOrani" />
-                <ScalarProperty Name="Birim" ColumnName="Aciklama" />
+        <EntityContainerMapping StorageEntityContainer="FSDSampleProjectdbModelStoreContainer" CdmEntityContainer="FSDSampleProjectdbEntities1">
+          <EntitySetMapping Name="FSDSampleProjectdb">
+            <EntityTypeMapping TypeName="FSDSampleProjectdbModel.FSDSampleProjectdb">
+              <MappingFragment StoreEntitySet="FSDSampleProjectdb">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UrunAciklama" ColumnName="UrunAciklama" />
+                <ScalarProperty Name="TextKod" ColumnName="TextKod" />
+                <ScalarProperty Name="Sira" ColumnName="Sira" />
+                <ScalarProperty Name="Agirlik" ColumnName="Agirlik" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="KisaAd" ColumnName="KisaAd" />
+                <ScalarProperty Name="GrupKod" ColumnName="GrupKod" />
+                <ScalarProperty Name="EkGrupKod" ColumnName="EkGrupKod" />
+                <ScalarProperty Name="UreticiKod" ColumnName="UreticiKod" />
+                <ScalarProperty Name="Birim" ColumnName="Birim" />
+                <ScalarProperty Name="KdvOran" ColumnName="KdvOran" />
+                <ScalarProperty Name="UrunTip" ColumnName="UrunTip" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="UretimTarihi" ColumnName="UretimTarihi" />
+                <ScalarProperty Name="SeriTakip" ColumnName="SeriTakip" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

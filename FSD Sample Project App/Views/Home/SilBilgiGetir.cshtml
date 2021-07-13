@@ -1,4 +1,4 @@
-﻿@model HospitalEquipment.Models.Entity.Urun
+﻿@model FSD_Sample_Project_App.Models.Entity.FSDSampleProjectdb
 @{
     ViewBag.Title = "SilBilgiGetir";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,52 +8,85 @@
 
 
 <div class="container" style="margin-top:20px;">
-    <form action="/Klinik/Sil/">
+    <form action="/Home/Sil/">
         @using (Html.BeginForm("Sil", "Urun"))
         {
 
             <div class="form-group">
-                @Html.HiddenFor(x => x.ID)
-                <b> <label>Clinic ID :</label></b>
-                @Html.DisplayFor(x => x.KlinikID, new { @class = "form-control" })
+                @Html.HiddenFor(x => x.Id)
+                <b> <label>ID :</label></b>
+                @Html.DisplayFor(x => x.Id, new { @class = "form-control" })
             </div>
 
             <div class="form-group">
-                <b> <label>Clinic Name :</label></b>
-                @Html.DisplayFor(x => x.KlinikAdi, new { @class = "form-control" })
+                <b> <label>Ürün Açıklama :</label></b>
+                @Html.DisplayFor(x => x.UrunAciklama, new { @class = "form-control" })
             </div>
             <div class="form-group">
-                <b> <label>Equipment Name :</label></b>
-                @Html.DisplayFor(x => x.EkipmanAdi, new { @class = "form-control" })
+                <b> <label>Text Kod :</label></b>
+                @Html.DisplayFor(x => x.TextKod, new { @class = "form-control" })
             </div>
             <div class="form-group">
-                <b> <label>Delivery Date :</label></b>
-                @Html.DisplayFor(x => x.TeminEdilmeTarihi, new { @class = "form-control" })
+                <b> <label>Sıra :</label></b>
+                @Html.DisplayFor(x => x.Sira, new { @class = "form-control" })
             </div>
             <div class="form-group">
-                <b> <label>Piece :</label></b>
-                @Html.DisplayFor(x => x.Adet, new { @class = "form-control" })
+                <b> <label>Ağırlık :</label></b>
+                @Html.DisplayFor(x => x.Agirlik, new { @class = "form-control" })
             </div>
             <div class="form-group">
-                <b> <label>Unit Price &#x24 :</label></b>
-                @Html.DisplayFor(x => x.BirimFiyat, new { @class = "form-control" })
+                <b> <label>Ad :</label></b>
+                @Html.DisplayFor(x => x.Ad, new { @class = "form-control" })
             </div>
             <div class="form-group">
-                <b> <label>Usage Rate :</label></b>
-                @Html.DisplayFor(x => x.KullanımOrani, new { @class = "form-control" })
+                <b> <label>Kısa Ad :</label></b>
+                @Html.DisplayFor(x => x.KisaAd, new { @class = "form-control" })
             </div>
             <div class="form-group">
-                <b> <label>Statement :</label></b>
-                @Html.DisplayFor(x => x.Aciklama, new { @class = "form-control" })
+                <b> <label>Grup Kod :</label></b>
+                @Html.DisplayFor(x => x.GrupKod, new { @class = "form-control" })
             </div>
 
             <div class="form-group">
-                <a href="/Klinik/Index/" class="btn btn-secondary">Exit</a>
+                <b> <label>Ek Grup Kod :</label></b>
+                @Html.DisplayFor(x => x.EkGrupKod, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <b> <label>Üretici Kod :</label></b>
+                @Html.DisplayFor(x => x.UreticiKod, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <b> <label>Birim :</label></b>
+                @Html.DisplayFor(x => x.Birim, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <b> <label>Kdv Oran :</label></b>
+                @Html.DisplayFor(x => x.KdvOran, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <b> <label>Ürün Tip :</label></b>
+                @Html.DisplayFor(x => x.UrunTip, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <b> <label>Durum :</label></b>
+                @Html.DisplayFor(x => x.Durum, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <b> <label>Üretim Tarihi :</label></b>
+                @Html.DisplayFor(x => x.UretimTarihi, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <b> <label>Seri Takip No :</label></b>
+                @Html.DisplayFor(x => x.SeriTakip, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <a href="/Home/Index/" class="btn btn-secondary">Exit</a>
                 <button class="btn btn-danger">Delete</button>
 
             </div>
 
         }
-        </form>
+    </form>
 
 </div>

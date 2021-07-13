@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HospitalEquipment.Models.Entity
+namespace FSD_Sample_Project_App.Models.Entity
 {
-    using FSD_Sample_Project_App.Models.Entity;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FSDSampleProjectdbEntities : DbContext
+    public partial class FSDSampleProjectdbEntities1 : DbContext
     {
-        public FSDSampleProjectdbEntities() : base("name=FSDSampleProjectdbEntities")
+        public FSDSampleProjectdbEntities1()
+            : base("name=FSDSampleProjectdbEntities1")
         {
         }
     
@@ -25,6 +25,6 @@ namespace HospitalEquipment.Models.Entity
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Urun> Urun { get; set; }
+        public virtual DbSet<FSDSampleProjectdb> FSDSampleProjectdb { get; set; }
     }
 }

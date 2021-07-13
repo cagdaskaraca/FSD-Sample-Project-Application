@@ -1,4 +1,4 @@
-﻿@model HospitalEquipment.Models.Entity.Urun
+﻿@model FSD_Sample_Project_App.Models.Entity.FSDSampleProjectdb
 @{
     ViewBag.Title = "Ekle";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,47 +6,80 @@
 
 
 <div class="container">
-    <form action="/Klinik/Ekle2/">
+    <form action="/Home/Ekle2/">
 
         <h2>ADD ITEMS</h2>
+
         <div class="form-group" style="margin-top:30px;">
-            <label>Clinic ID</label>
+            <label>Ürün Açıklama</label>
 
-            <input type="text" name="KlinikID" class="form-control" />
+            <input type="text" name="UrunAciklama" class="form-control" />
         </div>
         <div class="form-group">
-            <label>Clinic Name</label>
-            <input type="text" name="KlinikAdi" class="form-control" />
+            <label>TextKod</label>
+            <input type="text" name="TextKod" class="form-control" />
         </div>
         <div class="form-group">
-            <label>Equipment Name</label>
-            <input type="text" name="EkipmanAdi" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>Delivery Date &#128197</label>
-            <input type="date" name="TeminEdilmeTarihi" class="form-control" />
+            <label>Sira</label>
+            <input type="text" name="Sira" class="form-control" />
         </div>
 
         <div class="form-group">
-            <label>Piece</label>
-            <input type="text" name="Adet" class="form-control" />
-
-        </div>
-        <div class="form-group">
-            <label>Unit Price &#x24</label>
-            <input type="text" name="BirimFiyat" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>Usage Rate</label>
-            <input type="text" name="KullanımOrani" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>Statement</label>
-            <textarea name="Aciklama" class="form-control"></textarea>
+            <label>Ağırlık</label>
+            <input type="text" name="Agirlik" class="form-control" />
         </div>
 
         <div class="form-group">
-            <a href="/Klinik/Index/" class="btn btn-secondary">Exit</a>
+            <label>Ad</label>
+            <input type="text" name="Ad" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Kısa Ad</label>
+            <input type="text" name="KisaAd" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Grup Kod</label>
+            <input type="text" name="GrupKod" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Ek Grup Kod</label>
+            <input type="text" name="EkGrupKod" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Üretici Kod</label>
+            <input type="text" name="UreticiKod" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Birim</label>
+            <input type="text" name="Birim" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Kdv Oran</label>
+            <input type="text" name="KdvOran" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Ürün Tip</label>
+            <input type="text" name="UrunTip" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Durum</label>
+            <input type="text" name="Durum" class="form-control" />
+        </div>
+   
+        <div class="form-group">
+            <label>Üretim Tarihi &#128197</label>
+            <input type="date" name="UretimTarihi" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>SeriTakip</label>
+            <input type="text" name="SeriTakip" class="form-control" />
+
+        </div>
+       
+
+        <div class="form-group">
+            <a href="/Home/Index/" class="btn btn-secondary">Exit</a>
             <button class="btn btn-success">Add</button>
 
         </div>

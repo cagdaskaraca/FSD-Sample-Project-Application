@@ -1,5 +1,5 @@
-﻿@using HospitalEquipment.Models.Entity
-@model List<HospitalEquipment.Models.Entity.Urun>
+﻿@using FSD_Sample_Project_App.Models.Entity
+@model List<FSD_Sample_Project_App.Models.Entity.FSDSampleProjectdb>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,7 +10,7 @@
 
         <div class="form-group">
             <div style="width:25%;float:left">
-                @Html.TextBox("ara", null, new {@class="form-control",@placeHolder="Search CLinik or Equipment"})
+                @Html.TextBox("ara", null, new {@class="form-control",@placeHolder="Search Item"})
             </div>
             <div>
                 @Html.ActionLink("Ara", "Index", null, new { @class = "btn btn-info", onclick = "$(this).parents('form').attr('action', $(this).attr('href'));$(this).parents('form').submit();return false;" })
@@ -29,32 +29,55 @@
             <tr>
 
                 <td align="center">
-                    Clinic ID
+                    Ürün Açıklama
                 </td>
                 <td align="center">
-                    Clinic Name
+                    Text Kod
                 </td>
                 <td align="center">
-                    Equipment Name
+                    Sıra
                 </td>
                 <td align="center">
-                    Delivery Date
+                    Ağırlık
                 </td>
                 <td align="center">
-                    Piece
+                    Ad
                 </td>
                 <td align="center">
-                    Unit Price
+                    Kısa Ad
                 </td>
                 <td align="center">
-                    Usage Rate
+                    Grup Kod
                 </td>
                 <td align="center">
-                    Statement
+                    Ek Grup Kod
                 </td>
+                <td align="center">
+                    Üretici Kod
+                </td>
+                <td align="center">
+                    Birim
+                </td>
+                <td align="center">
+                    Kdv Oran
+                </td>
+                <td align="center">
+                    Ürün Tip
+                </td>
+                <td align="center">
+                    Durum
+                </td>
+                <td align="center">
+                    Üretim Tarihi
+                </td>
+                <td align="center">
+                    Seri Takip No
+                </td>
+               
+
                 <td colspan="2" align="center">
 
-                    <a href="/Klinik/Ekle/" class="btn btn-success" button style="width:190px; height:40px;">ADD</a>
+                    <a href="/Home/Ekle/" class="btn btn-success" button style="width:190px; height:40px;">ADD</a>
                 </td>
 
             </tr>
@@ -64,22 +87,29 @@
 
             @foreach (var item in Model)
             {
-                <tr>
+            <tr>
 
 
-                    @*  <td>@item.ID</td>*@
-                    <td align="center">@item.KlinikID</td>
-                    <td align="center">@item.KlinikAdi</td>
-                    <td align="center">@item.EkipmanAdi</td>
-                    <td align="center">@item.TeminEdilmeTarihi</td>
-                    <td align="center">@item.Adet</td>
-                    <td align="center">@item.BirimFiyat</td>
-                    <td align="center">@item.KullanımOrani</td>
-                    <td width="30%">@item.Aciklama</td>
-                    <td><a href="/Klinik/SilBilgiGetir/@item.ID" class="btn btn-danger">DELETE</a>
-                    <td><a href="/Klinik/GuncelleBilgiGetir/@item.ID" class="btn btn-primary">UPDATE</a> </td>
+                @*  <td>@item.ID</td>*@
+                <td width="20%" align="center">@item.UrunAciklama</td>
+                <td align="center">@item.TextKod</td>
+                <td align="center">@item.Sira</td>
+                <td align="center">@item.Agirlik</td>
+                <td align="center">@item.Ad</td>
+                <td align="center">@item.KisaAd</td>
+                <td align="center">@item.GrupKod</td>
+                <td align="center">@item.EkGrupKod</td>
+                <td align="center">@item.UreticiKod</td>
+                <td align="center">@item.Birim</td>
+                <td align="center">@item.KdvOran</td>
+                <td align="center">@item.UrunTip</td>
+                <td align="center">@item.Durum</td>
+                <td align="center">@item.UretimTarihi</td>
+                <td align="center">@item.SeriTakip</td>
+                <td><a href="/Home/SilBilgiGetir/@item.Id" class="btn btn-danger">DELETE</a>
+                <td><a href="/Home/GuncelleBilgiGetir/@item.Id" class="btn btn-primary">UPDATE</a> </td>
 
-                </tr>
+            </tr>
                 }
 
 

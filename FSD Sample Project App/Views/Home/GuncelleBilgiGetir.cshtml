@@ -1,4 +1,4 @@
-﻿@model HospitalEquipment.Models.Entity.Urun
+﻿@model FSD_Sample_Project_App.Models.Entity.FSDSampleProjectdb
 @{
     ViewBag.Title = "GuncelleBilgiGetir";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,48 +7,76 @@
 <h2 class="container">UPDATE ITEM</h2>
 
 <div class="container" style="margin-top:20px;" >
-    <form action="/Klinik/Guncelle/">
+    <form action="/Home/Guncelle/">
         @* <div class="form-group">
             <b>ID</b>
             @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
         </div>*@
-        @Html.HiddenFor(x => x.ID)
+        @Html.HiddenFor(x => x.Id)
+            @*<div class="form-group">
+                <b>ID</b>
+                @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+            </div>*@
         <div class="form-group">
-            <b>Clinic ID</b>
-            @Html.TextBoxFor(x => x.KlinikID, new { @class = "form-control" })
+            <b>Ürün Açıklaması</b>
+            @Html.TextBoxFor(x => x.UrunAciklama, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            <b>Clinic Name</b>
-            @Html.TextBoxFor(x => x.KlinikAdi, new { @class = "form-control" })
+            <b>Text Kod</b>
+            @Html.TextBoxFor(x => x.TextKod, new { @class = "form-control" })
         </div>
-        <div class="form-group">
-            <b>Equipment Name</b>
-            @Html.TextBoxFor(x => x.EkipmanAdi, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <b>Delivery Date &#128197</b>
-            @Html.TextBoxFor(x => x.TeminEdilmeTarihi, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <b>Piece</b> 
-            @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <b>Unit Price &#x24</b>
-            @Html.TextBoxFor(x => x.BirimFiyat, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <b>Usage Rate</b>
-            @Html.TextBoxFor(x => x.KullanımOrani, new { @class = "form-control" })
-        </div>
-       
 
         <div class="form-group">
-            <b>Statement</b>
-            @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+            <b>Sıra</b>
+            @Html.TextBoxFor(x => x.Sira, new { @class = "form-control" })
         </div>
+        <div class="form-group">
+            <b>Ağırlık</b>
+            @Html.TextBoxFor(x => x.Agirlik, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <b>Ad</b>
+            @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <b>Kısa Ad</b>
+            @Html.TextBoxFor(x => x.KisaAd, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <b>Grup Kod</b>
+            @Html.TextBoxFor(x => x.GrupKod, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <b>Ek Grup Kod</b>
+            @Html.TextBoxFor(x => x.EkGrupKod, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <b>Birim</b>
+            @Html.TextBoxFor(x => x.Birim, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <b>Kdv Oran</b>
+            @Html.TextBoxFor(x => x.KdvOran, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <b>Ürün Tip</b>
+            @Html.TextBoxFor(x => x.UrunTip, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <b>Durum</b>
+            @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <b>Üretim Tarihi &#128197</b>
+            @Html.TextBoxFor(x => x.UretimTarihi, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <b>Seri Takip</b>
+            @Html.TextBoxFor(x => x.SeriTakip, new { @class = "form-control" })
+        </div>
+       
         <div>
-            <a href="/Klinik/Index/" class="btn btn-secondary">Exit</a>
+            <a href="/Home/Index/" class="btn btn-secondary">Exit</a>
             <button class="btn btn-primary">Update</button>
         </div>
     </form>
